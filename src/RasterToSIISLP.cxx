@@ -100,7 +100,7 @@ void ResetSignal(void)
 
 
 /*  Compute the indent for the printer we're printing to. */
-int ComputeIndent(cups_page_header_t &header)
+int ComputeIndent(cups_page_header2_t &header)
 {
 	if (0 == gPrinterModel)
 	{
@@ -257,7 +257,7 @@ void PreparePrinter()
 
 
 /*  'StartPage()' - Start a page of graphics. */
-void StartPage(cups_page_header_t &header)
+void StartPage(cups_page_header2_t &header)
 {
 	DEBUG_FUNC;
 
@@ -292,7 +292,7 @@ void StartPage(cups_page_header_t &header)
 }
 
 
-void PageToBitmap(int pageNum, cups_raster_t *ras, cups_page_header_t &header, BitMap &oBitmap)
+void PageToBitmap(int pageNum, cups_raster_t *ras, cups_page_header2_t &header, BitMap &oBitmap)
 {
 	std::vector<unsigned char> bitmapvector;
 
@@ -614,11 +614,11 @@ int main(int argc, char *argv[])
 	PreparePrinter();
 
 	int pageNum = 0;
-	cups_page_header_t  header = /*  Page header from file */
+	cups_page_header2_t  header = /*  Page header from file */
 	{
 		0
 	};
-	while (cupsRasterReadHeader(ras, &header))
+	while (cupsRasterReadHeader2(ras, &header))
 	{
 
 		/*  Write a status message with the page number and number of copies. */
