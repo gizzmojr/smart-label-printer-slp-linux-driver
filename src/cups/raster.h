@@ -393,12 +393,12 @@ typedef ssize_t (*cups_raster_iocb_t)(void *ctx, unsigned char *buffer, size_t l
 
 extern void		cupsRasterClose(cups_raster_t *r);
 extern cups_raster_t	*cupsRasterOpen(int fd, cups_mode_t mode);
-extern unsigned		cupsRasterReadHeader(cups_raster_t *r,
-			                     cups_page_header_t *h) _CUPS_DEPRECATED_MSG("Use cupsRasterReadHeader2 instead.");
+//extern unsigned		cupsRasterReadHeader(cups_raster_t *r,
+//			                     cups_page_header_t *h) _CUPS_DEPRECATED_MSG("Use cupsRasterReadHeader2 instead.");
 extern unsigned		cupsRasterReadPixels(cups_raster_t *r,
 			                     unsigned char *p, unsigned len);
-extern unsigned		cupsRasterWriteHeader(cups_raster_t *r,
-			                      cups_page_header_t *h) _CUPS_DEPRECATED_MSG("Use cupsRasterWriteHeader2 instead.");
+//extern unsigned		cupsRasterWriteHeader(cups_raster_t *r,
+//			                      cups_page_header_t *h) _CUPS_DEPRECATED_MSG("Use cupsRasterWriteHeader2 instead.");
 extern unsigned		cupsRasterWritePixels(cups_raster_t *r,
 			                      unsigned char *p, unsigned len);
 
@@ -416,7 +416,7 @@ extern cups_raster_t	*cupsRasterOpenIO(cups_raster_iocb_t iocb, void *ctx,
 			                  cups_mode_t mode);
 
 /**** New in CUPS 2.2/macOS 10.12 ****/
-extern int		cupsRasterInitPWGHeader(cups_page_header2_t *h, pwg_media_t *media, const char *type, int xdpi, int ydpi, const char *sides, const char *sheet_back) _CUPS_API_2_2;
+//extern int		cupsRasterInitPWGHeader(cups_page_header2_t *h, pwg_media_t *media, const char *type, int xdpi, int ydpi, const char *sides, const char *sheet_back) _CUPS_API_2_2;
 
 #  ifdef __cplusplus
 }
